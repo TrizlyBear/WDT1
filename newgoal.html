@@ -1,0 +1,40 @@
+<html>
+<head>
+  <title>Goals - Create New Goal</title>
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+<div class="menu">
+  <div class="title">Goals</div>
+  <div class="items">
+    <a href="index.html">HOME</a>
+    <a href="login.html">LOGIN</a>
+    <a href="signup.html">SIGN UP</a>
+  </div>
+</div>
+
+<div class="loginBox centerbox">
+  <div class="" style="width: 64vh">
+    <div class="infotitle">general info</div>
+    <input placeholder="name" style="float: left">
+    <textarea placeholder="description" style="resize: none; float: right; height: 16vh;"></textarea>
+    <input placeholder="Due: " type="date" style="float:left;">
+    <div class="infotitle" style="">goal info</div>
+    <select name="type" id="typeSelect">
+      <option value="monetary">monetary</option>
+      <option value="numeric">numeric</option>
+      <option value="boolean">boolean</option>
+      <option></option>
+    </select>
+    <input placeholder="amount ($)" id="monetaryinput" style="display: none; float: right">
+    <input placeholder="amount" id="numericinput" style="display: none; float:right;">
+    <input type="button" id="booleaninput" style="display: none">
+
+    <button class="button" style="width: 30vh !important; color: white !important;"><a href="index.html">Create goal</a></button>
+  </div>
+
+</div>
+
+
+</body>
+</html>
