@@ -63,7 +63,7 @@ html, body{
 
 .goalTitle {
     font-weight: 600;
-    font-size: 3vw;
+    font-size: 2.5vw;
     width: content-box;
     display: inline-block;
 }
@@ -128,7 +128,7 @@ input, textarea, select {
     height: 7vh;
     font-size: 4vh;
     font-weight: 800;
-
+    padding: 0.8vw;
 }
 
 .loginboxcenter {
@@ -137,7 +137,6 @@ input, textarea, select {
 }
 
 input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
-    padding-left: 0.8vw;
     font-weight: 800;
     font-size: 4vh;
     color: black;
