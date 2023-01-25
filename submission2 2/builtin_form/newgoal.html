@@ -1,0 +1,39 @@
+<html>
+<head>
+  <title>Goals - Create New Goal</title>
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+<div class="menu">
+  <div class="title">Goals</div>
+  <div class="items">
+    <a href="index.html">HOME</a>
+    <a href="login.html">LOGIN</a>
+    <a href="signup.html">SIGN UP</a>
+  </div>
+</div>
+
+<div class="loginBox centerbox">
+  <div class="" style="width: 64vh">
+    <div class="infotitle">general info</div>
+    <input placeholder="name" style="float: left" required><span message="This field can not be empty"></span>
+    <textarea placeholder="description" style="resize: none; float: right; height: 16vh;" required></textarea><span message="This field can not be empty"></span>
+    <input placeholder="Due: " type="date" style="float:left;" required><span message="This field can not be empty"></span>
+    <div class="infotitle" style="">goal info</div>
+    <select name="type" id="typeSelect" required>
+      <option value="monetary">monetary</option>
+      <option value="numeric">numeric</option>
+      <option value="boolean">boolean</option>
+      <option></option>
+    </select><span message="This field can not be empty"></span>
+    <input placeholder="amount ($)" id="monetaryinput" style="display: none; float: right" type="number" min=0 value=0 required><span message="This field can not be empty"></span>
+    <input placeholder="amount" id="numericinput" style="display: none; float:right;" type="number" min=0 value=0 required><span message="This field can not be empty"></span>
+    <input type="button" id="booleaninput" style="display: none" value=0 required><span message="This field can not be empty"></span>
+    <input placeholder="descriptor" style="width: 62vh" required><span message="This field can not be empty"></span>
+
+    <button class="button" style="width: 30vh !important; color: white !important;" id="submit"><a href="index.html">Create goal</a></button>
+  </div>
+
+</div>
+</body>
+</html>

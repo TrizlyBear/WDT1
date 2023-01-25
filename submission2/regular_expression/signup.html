@@ -52,26 +52,37 @@
     }
   })
 
+  // Define tracking variables
   let clicks = 0
   let seconds = 0
   let keypresses = 0
   let characters = 0
 
+  // For every click increment the click counter
   document.addEventListener("click", () => {clicks += 1})
+
+  // Added keypress listeners to all input fields
   document.querySelectorAll("input, textarea").forEach((q) => {
     q.addEventListener("keypress", ()=>{characters+=1})
   })
+
+  // Add keydown event to the whole document and increment the counter on keydown
   document.addEventListener("keydown", (e) => {
     keypresses += 1
   })
+
+  // Set an interval to count the time on the page
   setInterval(()=> {
     seconds += 1
   }, 1000)
 
+  // Create a function to show the tracking div
   let trackingdiv = document.getElementById("tracking")
   function showTracking() {
     trackingdiv.style.display = "block"
   }
+
+  // Create a function to update the tracking
   function updateTracking() {
     trackingdiv.innerHTML = `Number of mouse clicks: ${clicks}\n` +
             `Total time spent: ${(seconds-(seconds%60))/60} minutes and ${seconds%60} seconds\n` +

@@ -1,0 +1,248 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,800;1,800&display=swap');
+
+* {
+    font-family: "Open Sans", sans-serif;
+    font-style: normal;
+}
+
+.title {
+    font-size: 6vw;
+    font-weight: 800;
+    width: min-content;
+    float: left;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:link {
+    color: black;
+}
+
+a:visited {
+    color: black;
+}
+
+html, body{
+    margin: 0;
+}
+
+.items{
+    font-size: 4vw;
+    font-weight: 800;
+    text-align: right;
+    float: right;
+}
+.menu{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 3vw;
+    height: min-content;
+}
+
+.goals{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+.goal{
+    background: rgba(0,0,0, 0.15);
+    width: 30vw;
+    height: 30vh;
+    border-radius: 6px;
+    padding: 2vw;
+    margin: 2vw;
+}
+
+.goal div {
+    margin-bottom: 1vh;
+}
+
+.goalTitle {
+    font-weight: 600;
+    font-size: 2.5vw;
+    width: content-box;
+    display: inline-block;
+}
+
+.goalDue {
+    opacity: .5;
+    display: inline;
+    font-size: 2vw;
+}
+
+.goalDescription {
+    float: left;
+    width: 50%;
+}
+
+.goalAmount {
+    display: block;
+    text-align: center;
+    font-weight: 800;
+    font-size: 5vw;
+    width: 100%;
+}
+
+.goalAmountDescription {
+    text-align: center;
+    color: rgba(0, 0, 0, .3);
+    width: 100%;
+}
+
+.goalAmountBox {
+    float: right;
+    width: 50%;
+    height: 80%;
+    display: flex;
+    align-content: center;
+    flex-flow: row wrap;
+}
+
+.centerbox {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+}
+
+/* Login and sign up style */
+
+.loginBox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70vh;
+}
+
+input, textarea, select {
+
+    background: rgba(0, 0, 0, .1);
+    border-radius: 6px;
+    border: none;
+    width: 30vh;
+    margin: 1vh;
+    height: 7vh;
+    font-size: 4vh;
+    font-weight: 800;
+    padding: 0.8vw;
+}
+
+.loginboxcenter {
+    height: min-content;
+    width: 30vh;
+}
+
+input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
+    font-weight: 800;
+    font-size: 4vh;
+    color: black;
+    opacity: 0.3;
+}
+
+.button {
+    background: black;
+    border: none;
+    height: 7vh;
+    width: 20vh;
+    margin: 1vh;
+    border-radius: 6px;
+    color: white !important;
+    text-align: left;
+    font-weight: 800;
+    font-size: 4vh;
+    padding-left: 0.8vw;
+}
+.signupBox {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.signupcenter {
+    width: 64vh;
+}
+
+.infotitle {
+    font-weight: 800;
+    margin: 1vh;
+    display: block;
+    font-size: 4vh;
+    padding: 1vh;
+}
+
+#aboutyou {
+    height: 43vh;
+}
+
+#aboutyou::-webkit-input-placeholder {
+    padding: 0.8vw;
+}
+
+input[type='date']:before {
+    content: attr(placeholder);
+    white-space: pre;
+}
+
+.button a:link,  .button a:visited{
+    color: white !important;
+}
+
+option:checked {
+    display: none;
+}
+
+select:has(> option[value="monetary"]:checked) ~ #monetaryinput{
+    display: block !important;
+}
+
+select:has(> option[value="numeric"]:checked) ~ #numericinput{
+    display: block !important;
+}
+
+select:has(> option[value="boolean"]:checked) ~ #boolean{
+    display: block !important;
+}
+
+input:invalid, textarea:invalid {
+    outline: medium solid red;
+}
+
+:invalid + span::after, :valid + span::after {
+    width: 30vh;
+    height: auto;
+    position: absolute;
+    z-index: 99;
+    margin: 1vh;
+    padding: 1vh;
+    border-radius: 6px;
+    background: white;
+    box-shadow: rgba(0, 0, 0, 0.1) 1px 0 100px;
+}
+:invalid:focus + span::after {
+    content: attr(message);
+}
+
+input:invalid, textarea:invalid{
+    animation: shake 0.1s ease-in-out 0s 3;
+}
+
+@keyframes shake {
+    0% {transform: translateX(0)}
+    25% {transform: translateX(5px)}
+    50% {transform: translateX(0)}
+    75% {transform: translateX(-5px)}
+    100% {transform: translateX(0)}
+}
+
+input:valid, textarea:valid {
+    outline: medium solid green;
+}
+
+:valid:focus + span::after {
+    content: "Looks good!";
+    display: block !important;
+}

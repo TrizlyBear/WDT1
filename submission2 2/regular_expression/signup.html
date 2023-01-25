@@ -1,0 +1,95 @@
+<html>
+<head>
+  <title>Goals - Sign Up</title>
+  <link rel="stylesheet" href="index.css">
+
+</head>
+<body>
+<div id="tracking" onclick=""></div>
+<div class="menu">
+  <div class="title">Goals</div>
+  <div class="items">
+    <a href="index.html">HOME</a>
+    <a href="login.html">LOGIN</a>
+    <a href="signup.html">SIGN UP</a>
+  </div>
+</div>
+
+<div class="signupBox">
+  <div class="signupcenter">
+    <div style="float: left; display: inline; width: min-content">
+      <input placeholder="full name" pattern="[A-z| ]*" required><span message="Required, can only contain alphabetical letters"></span>
+      <input placeholder="username" pattern="[A-Z].{3,10}[0-9]" required><span message="Required, must start with a capital letter, end with a number or special character, 5 to 12 characters"></span>
+      <input placeholder="email" pattern=".{1,}@.{1,}\..{1,}" required><span message="Required, must follow email format"></span>
+      <input placeholder="password" pattern="[\w~`!@#\$%\^&\*\(\)-\+=\{\[\}\]\|\\:;&quot;'<,>\.\?/]{12,}" type="password" required><span message="Required, minimum of 12 characters, combination capital and lower letters, numbers and symbols"></span>
+      <select required>
+        <option value="male">male</option>
+        <option value="female">female</option>
+      </select>
+    </div>
+
+    <textarea placeholder="about you" style="float: right; display: inline; resize: none" id="aboutyou"></textarea><span></span>
+    <div class="infotitle" style="margin-top: 40vh !important;">address info</div>
+    <input placeholder="zipcode" id="zipcode" required><span message="Required, must follow zipcode format, e.g.: Netherlands: 1234AB"></span>
+    <input placeholder="country" style="float: right" id="country" required><span message="Required"></span>
+    <input placeholder="address"><span></span>
+    <input placeholder="language" style="float: right" required><span message="Required"></span>
+    <button class="button" id="submit" onclick="updateTracking();showTracking();(e)=>{e.preventDefault()};"><a href="index.html">Sign Up</a></button>
+  </div>
+</div>
+
+
+
+<script src="verifyform.js"></script>
+<script>
+  let country = document.getElementById("country")
+  let zipcode = document.getElementById("zipcode")
+  country.addEventListener("change", (e) => {
+    if (country.value.toLowerCase() == "netherlands") {
+      zipcode.setAttribute("pattern","[0-9]{4}[A-Z]{2}")
+    } else {
+      zipcode.removeAttribute("pattern")
+    }
+  })
+
+  // Define tracking variables
+  let clicks = 0
+  let seconds = 0
+  let keypresses = 0
+  let characters = 0
+
+  // For every click increment the click counter
+  document.addEventListener("click", () => {clicks += 1})
+
+  // Added keypress listeners to all input fields
+  document.querySelectorAll("input, textarea").forEach((q) => {
+    q.addEventListener("keypress", ()=>{characters+=1})
+  })
+
+  // Add keydown event to the whole document and increment the counter on keydown
+  document.addEventListener("keydown", (e) => {
+    keypresses += 1
+  })
+
+  // Set an interval to count the time on the page
+  setInterval(()=> {
+    seconds += 1
+  }, 1000)
+
+  // Create a function to show the tracking div
+  let trackingdiv = document.getElementById("tracking")
+  function showTracking() {
+    trackingdiv.style.display = "block"
+  }
+
+  // Create a function to update the tracking
+  function updateTracking() {
+    trackingdiv.innerHTML = `Number of mouse clicks: ${clicks}\n` +
+            `Total time spent: ${(seconds-(seconds%60))/60} minutes and ${seconds%60} seconds\n` +
+            `Total key presses: ${keypresses}\n` +
+            `Total number of characters typed: ${characters}`
+  }
+</script>
+
+</body>
+</html>

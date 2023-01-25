@@ -18,10 +18,10 @@
 <div class="signupBox">
   <div class="signupcenter">
     <div style="float: left; display: inline; width: min-content">
-      <input placeholder="full name" pattern="[A-z| ]*" required><span message="Required, can only contain alphabetical letters"></span>
-      <input placeholder="username" pattern="[A-Z].{3,10}[0-9]" required><span message="Required, must start with a capital letter, end with a number or special character, 5 to 12 characters"></span>
-      <input placeholder="email" pattern=".{1,}@.{1,}\..{1,}" required><span message="Required, must follow email format"></span>
-      <input placeholder="password" pattern="[\w~`!@#\$%\^&\*\(\)-\+=\{\[\}\]\|\\:;&quot;'<,>\.\?/]{12,}" type="password" required><span message="Required, minimum of 12 characters, combination capital and lower letters, numbers and symbols"></span>
+      <input placeholder="full name" required><span message="Required, can only contain alphabetical letters"></span>
+      <input placeholder="username" minlength=5 maxlength=12 required><span message="Required, must start with a capital letter, end with a number or special character, 5 to 12 characters"></span>
+      <input placeholder="email" type="email" required><span message="Required, must follow email format"></span>
+      <input placeholder="password" type="password" required><span message="Required, minimum of 12 characters, combination capital and lower letters, numbers and symbols"></span>
       <select required>
         <option value="male">male</option>
         <option value="female">female</option>
@@ -40,7 +40,6 @@
 
 
 
-<script src="verifyform.js"></script>
 <script>
   let country = document.getElementById("country")
   let zipcode = document.getElementById("zipcode")
