@@ -175,7 +175,7 @@ input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
 }
 
 #aboutyou {
-    height: 34vh;
+    height: 43vh;
 }
 
 #aboutyou::-webkit-input-placeholder {
@@ -204,5 +204,49 @@ select:has(> option[value="numeric"]:checked) ~ #numericinput{
 }
 
 select:has(> option[value="boolean"]:checked) ~ #boolean{
+    display: block !important;
+}
+
+.valid {
+    outline: medium solid green;
+}
+
+.invalid {
+    outline: medium solid red;
+}
+
+.invalid + span::after, .valid + span::after {
+    width: 30vh;
+    height: auto;
+    position: absolute;
+    z-index: 99;
+    margin: 1vh;
+    padding: 1vh;
+    border-radius: 6px;
+    background: white;
+    box-shadow: rgba(0, 0, 0, 0.1) 1px 0 100px;
+}
+.invalid:focus + span::after {
+    content: attr(message);
+}
+
+.invalid{
+    animation: shake 0.1s ease-in-out 0s 3;
+}
+
+@keyframes shake {
+    0% {transform: translateX(0)}
+    25% {transform: translateX(5px)}
+    50% {transform: translateX(0)}
+    75% {transform: translateX(-5px)}
+    100% {transform: translateX(0)}
+}
+
+.valid {
+    outline: medium solid green;
+}
+
+.valid:focus + span::after {
+    content: "Looks good!";
     display: block !important;
 }
